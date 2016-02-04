@@ -23,7 +23,7 @@
     <form action= "/attack1" id="left_attack">
       <input type="submit" value="Attack@!£!$!%">
     </form>
-  <% elsif @game.p2.hp == 10 %>
+  <% elsif @game.somebody_won? %>
     <form action= "/player_one_wins" id="left_attack">
       <input type="submit" value="Attack@!£!$!%">
     </form>

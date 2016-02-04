@@ -26,4 +26,9 @@ class Game
     end
   end
 
+
+  def somebody_won?
+    (p1.hp - 10) == 0 || (p2.hp - 10) == 0
+  end
+
 end
