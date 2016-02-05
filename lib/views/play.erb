@@ -1,34 +1,37 @@
-
+<html>
+  <head>
+    <title> Play Battle! </title>
+    <link href='styles/play.css' type='text/css'
+      rel="stylesheet" />
+  </head>
+<body>
 
 
 <h1 style="color:#004d00;size:6;text-align:center;">vs.</h1>
 
-
-
-
-
 <div id="player_one_info" name="player_one_info" style="float: left;">
-  <h2 style="color:#004d00;size:6;text-align:center;">
+  <h2 style="text-align:center">
     Corbynista <%= @game.p1.name %>
   </h2>
-    <img src='http://i.imgur.com/5kfz7kn.gif' align="center" height="500" width="700">
-      <h2 style="color:#e64d00;size:5;text-align:center;">
+    <img src='http://i.imgur.com/5kfz7kn.gif' style="border: 3px double red" align="center" height="500" width="600">
+      <h2 style="color:#ff3333;size:5;text-align:center;">
         HP: <%= @game.p1.hp %>
+        <p><progress value="<%= @game.p1.hp %>" max="100"> </progress></p>
       </h2>
   <div id="player_one_dashboard" name="player_one_dashboard" align="center">
     <% if @game.somebody_won?  %>
     <form action= "/player_one_wins" id="left_attack">
       <input type="submit" value="Attack@!£!$!%">
     </form>
-  <% elsif @game.turn.even? %>
-    <form action= "/attack1" id="left_attack">
-      <input type="submit" value="Attack@!£!$!%">
-    </form>
-  <% else %>
-    <form action= "/wait_turn" id="left_attack">
-      <input type="submit" value="Attack@!£!$!%">
-    </form>
-  <% end %>
+    <% elsif @game.turn.even? %>
+      <form action= "/attack1" id="left_attack">
+        <input type="submit" value="Attack@!£!$!%">
+      </form>
+    <% else %>
+      <form action= "/wait_turn" id="left_attack">
+        <input type="submit" value="Attack@!£!$!%">
+      </form>
+    <% end %>
   </div>
 </div>
 
@@ -39,20 +42,20 @@
   <h2 style="color:#004d00;size:6;text-align:center;">
     Silent Majority Member <%= @game.p2.name %>
   </h2>
-    <img src='http://www.slate.com/content/dam/slate/blogs/slatest/2016/01/slatest_160128_trump8.gif.CROP.original-original.gif' style="float: center;" height="500" width="700">
+    <img src='http://www.slate.com/content/dam/slate/blogs/slatest/2016/01/slatest_160128_trump8.gif.CROP.original-original.gif' style="float: center;" height="500" width="600">
       <h2 style="color:#ffcc99;size:5;text-align:center;">
         HP: <%= @game.p2.hp %>
       </h2>
   <div id="player_two_dashboard" name="player_two_dashboard" align="center">
     <% if @game.turn.odd? %>
-    <form action= "/attack2" id="right_attack">
-      <input type="submit" value="Attack@!£!$!%">
-    </form>
-  <% else %>
-    <form action= "/wait_turn" id="right_attack">
-      <input type="submit" value="Attack@!£!$!%">
-    </form>
-  <% end %>
+      <form action= "/attack2" id="right_attack">
+        <input type="submit" value="Attack@!£!$!%">
+      </form>
+    <% else %>
+      <form action= "/wait_turn" id="right_attack">
+        <input type="submit" value="Attack@!£!$!%">
+      </form>
+    <% end %>
   </div>
 </div>
 
@@ -64,3 +67,4 @@
 
 </body>
 </html>
+<!-- "color:#ff3333;size:6;text-align:center;" -->

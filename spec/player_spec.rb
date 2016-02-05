@@ -18,6 +18,7 @@ describe Player do
   context 'HP changes' do
     describe '#receive_damage' do
       it 'deducts hp points from player' do
+        allow(Kernel).to receive(:rand).and_return(10)
         expect{corbyn.receive_damage}.to change {corbyn.hp}.by(-10)
       end
     end

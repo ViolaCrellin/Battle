@@ -1,10 +1,9 @@
 
 
 class Player
-  attr_reader :name, :hp
+  attr_reader :name, :hp, :hp_range
 
   STARTING_HP = 100
-  ATTACK_HP = 10
 
   def initialize(name, hp=STARTING_HP)
     @name = name
@@ -12,7 +11,7 @@ class Player
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= Kernel.rand(20)
   end
 
 

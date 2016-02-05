@@ -1,0 +1,16 @@
+body {
+  font-family:helvetica, sans-serif;
+  background-color: rgb(255, 77, 77);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+}
+
+div#player_one_info {
+
+}

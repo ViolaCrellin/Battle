@@ -12,6 +12,7 @@ feature 'Game play' do
 context 'Corbyn\'s attack' do
   before do
     sign_in_and_play
+    allow(Kernel).to receive(:rand).and_return(10)
     find('#left_attack').click_button("Attack@!£!$!%")
     click_button "OK"
   end
@@ -45,34 +46,39 @@ context 'Corbyn\'s attack' do
 
 end
 
-  scenario 'Trump can\'t attack when it is not his turn' do
-    sign_in_and_play
-    find('#right_attack').click_button("Attack@!£!$!%")
-    expect(page).to have_content("Wait your turn!")
-  end
+context 'Trump game play' do
 
-  scenario 'Trump doesn\'t reduce Corbyn\'s HP when not his turn, but has been attacked once' do
-    sign_in_and_play
-    find('#left_attack').click_button("Attack@!£!$!%")
-    click_button "OK"
-    2.times do
+before do
+  sign_in_and_play
+  allow(Kernel).to receive(:rand).and_return(10)
+end
+
+    scenario 'Trump can\'t attack when it is not his turn' do
       find('#right_attack').click_button("Attack@!£!$!%")
-      click_button "OK"
+      expect(page).to have_content("Wait your turn!")
     end
-    expect(page).to have_content('Corbynista Jez Corbyn HP: 90 Silent Majority Member Donald Trump HP: 90')
-  end
 
-  scenario 'Corbyn wins' do
-    sign_in_and_play
-    9.times do
+    scenario 'Trump doesn\'t reduce Corbyn\'s HP when not his turn, but has been attacked once' do
       find('#left_attack').click_button("Attack@!£!$!%")
       click_button "OK"
-      find('#right_attack').click_button("Attack@!£!$!%")
-      click_button "OK"
+      2.times do
+        find('#right_attack').click_button("Attack@!£!$!%")
+        click_button "OK"
+      end
+      expect(page).to have_content('Corbynista Jez Corbyn HP: 90 Silent Majority Member Donald Trump HP: 90')
     end
-    find('#left_attack').click_button("Attack@!£!$!%")
-    expect(page).to have_content('Corbyn WINS!! GO SOCIALISM!!')
-  end
 
+    scenario 'Corbyn declared winner' do
+      9.times do
+        find('#left_attack').click_button("Attack@!£!$!%")
+        click_button "OK"
+        find('#right_attack').click_button("Attack@!£!$!%")
+        click_button "OK"
+      end
+      find('#left_attack').click_button("Attack@!£!$!%")
+      expect(page).to have_content("Jez Corbyn WINS!! GO SOCIALISM!!")
+    end
+
+  end
 
 end
