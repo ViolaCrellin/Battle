@@ -31,8 +31,8 @@
         <h2>
           <progress class="hp_bar" value="<%= @game.p1.hp %>" max="100"> </progress>
         </h2>
-        <% if @game.somebody_won?  %>
-          <form action= "/player_one_wins" id="left_attack">
+        <% if @game.p2.dead?  %>
+          <form action= "/player_wins" id="left_attack">
             <input type="submit" value="Attack@!£!$!%">
           </form>
         <% elsif @game.turn.even? %>
@@ -67,7 +67,11 @@
         <h2>
           <progress class = "hp_bar" value="<%= @game.p2.hp %>" max="100"> </progress>
         </h2>
-        <% if @game.turn.odd? %>
+        <% if @game.p2_won?  %>
+          <form action= "/player_wins" id="right_attack">
+            <input type="submit" value="Attack@!£!$!%">
+          </form>
+        <% elsif @game.turn.odd? %>
           <form action= "/attack2" id="right_attack">
             <input type="submit" value="Attack@!£!$!%">
           </form>

@@ -46,10 +46,11 @@ class Battle < Sinatra::Base
     erb :wait_turn
   end
 
-  get '/player_one_wins' do
+  get '/player_wins' do
     @game = $game
-    erb :player_one_wins
+    erb :player_wins
   end
+
 
 
   # start the server if ruby file executed directly

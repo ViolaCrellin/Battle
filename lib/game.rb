@@ -26,10 +26,12 @@ class Game
     end
   end
 
+  def p1_won?
+    p2.dead?
+  end
 
-
-  def somebody_won?
-    (p1.hp - 10) == 0 || (p2.hp - 10) == 0
+  def p2_won?
+    p1.dead?
   end
 
 end
