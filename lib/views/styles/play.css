@@ -1,16 +1,31 @@
 body {
   font-family:helvetica, sans-serif;
   background-color: rgb(255, 77, 77);
+  font-size: 48px;
+  font-weight: normal;
 }
 
 h1 {
   color: rgb(255, 255, 255);
+  font-size: 150%;
+  font-weight: bold;
+  letter-spacing: 1.2em;
+  text-align: center;
 }
 
 h2 {
   color: rgb(255, 255, 255);
+  font-size: 125%;
+  letter-spacing: normal;
+  text-align: center;
 }
 
-div#player_one_info {
-
+div #player_one_info {
+  float: left;
+  height: 1000px;
+  width: 800px;
+  border: 4px dotted #ffffff;
+  border-radius: 7px
+  padding: 10px;
+  text-align: center;
 }
