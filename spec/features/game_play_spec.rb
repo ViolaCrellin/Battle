@@ -17,7 +17,7 @@ context 'Corbyn\'s attack' do
   end
 
   scenario 'Corybn reduces Trump\'s HP' do
-    expect(page).to have_content('HP: 100 HP: 90')
+    expect(page).to have_content('Corbynista Jez Corbyn HP: 100 Silent Majority Member Donald Trump HP: 90')
   end
 
   scenario 'Trump Attacking' do
@@ -28,7 +28,7 @@ context 'Corbyn\'s attack' do
   scenario 'Trump reduces Corbyn\'s HP' do
     find('#right_attack').click_button("Attack@!£!$!%")
     click_button "OK"
-    expect(page).to have_content('HP: 90 HP: 90')
+    expect(page).to have_content('Corbynista Jez Corbyn HP: 90 Silent Majority Member Donald Trump HP: 90')
   end
 
   scenario 'Corybn can\'t attack when it is not his turn' do
@@ -40,7 +40,7 @@ context 'Corbyn\'s attack' do
   scenario 'Corbyn doesn\'t reduce Trump\'s HP when not his turn' do
       find('#left_attack').click_button("Attack@!£!$!%")
       click_button "OK"
-    expect(page).to have_content('HP: 100 HP: 90')
+    expect(page).to have_content('Corbynista Jez Corbyn HP: 100 Silent Majority Member Donald Trump HP: 90')
   end
 
 end
@@ -59,7 +59,7 @@ end
       find('#right_attack').click_button("Attack@!£!$!%")
       click_button "OK"
     end
-    expect(page).to have_content('HP: 90 HP: 90')
+    expect(page).to have_content('Corbynista Jez Corbyn HP: 90 Silent Majority Member Donald Trump HP: 90')
   end
 
   scenario 'Corbyn wins' do

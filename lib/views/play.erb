@@ -1,20 +1,17 @@
 
-<html>
-<body background="bgimage.jpg">
 
 
-<h1 style="color:#004d00;size:6;text-align:left;">
-  <%= @game.p1.name %>
-   <span style="float:right;"><%=  @game.p2.name %>
-   </h1>
-   <h1 style="color:#004d00;size:6;text-align:center;">vs.</h1>
+<h1 style="color:#004d00;size:6;text-align:center;">vs.</h1>
 
 
 
 
 
 <div id="player_one_info" name="player_one_info" style="float: left;">
-    <img src='http://i.imgur.com/5kfz7kn.gif' align="center">
+  <h2 style="color:#004d00;size:6;text-align:center;">
+    Corbynista <%= @game.p1.name %>
+  </h2>
+    <img src='http://i.imgur.com/5kfz7kn.gif' align="center" height="500" width="700">
       <h2 style="color:#e64d00;size:5;text-align:center;">
         HP: <%= @game.p1.hp %>
       </h2>
@@ -39,7 +36,10 @@
 
 
 <div id="player_two_info" name="player_two_info" style="float: right;">
-    <img src='http://www.slate.com/content/dam/slate/blogs/slatest/2016/01/slatest_160128_trump8.gif.CROP.original-original.gif' style="float: center;">
+  <h2 style="color:#004d00;size:6;text-align:center;">
+    Silent Majority Member <%= @game.p2.name %>
+  </h2>
+    <img src='http://www.slate.com/content/dam/slate/blogs/slatest/2016/01/slatest_160128_trump8.gif.CROP.original-original.gif' style="float: center;" height="500" width="700">
       <h2 style="color:#ffcc99;size:5;text-align:center;">
         HP: <%= @game.p2.hp %>
       </h2>
