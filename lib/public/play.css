@@ -30,137 +30,72 @@ h2 {
   margin-right: auto;
   width: 100%;
   height:100%;
+  padding: 10px;
+  padding-bottom: 10px;
 }
 
-.wrapper>div {
+
+
+/* need a conditional on page size */
+
+.wrapper>div.entire_player_one {
+  float: left;
   border: 4px dotted rgb(255, 255, 255);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
-  width: 45%;
+  width: 40%;
   height: 55%;
 }
 
-div.entire_player_one {
-  /*margin-left: auto;
-  margin-right: auto;*/
-  float: left;
+div.player_info>h2 {
+  color: rgb(255, 255, 255);
+  font-size: 125%;
+  letter-spacing: normal;
+  text-align: center;
 }
+
 
 div.entire_player_two {
-  float: right;
-}
-/*player one div*/
-
-/*.entire_player_one>div.player_info{
-  width: 100%;
-  height: 75%;
-}*/
-
-/*#clearfix {
-  display: block;
-  clear: both;
-}*/
-
-/*div#player_one_info>div##player_one_dashboard {
-  float: center;
-  size: relative;
-  width: 65%;
-  height: 5%;
-  color: rgb(255, 255, 255);
-  font-size: 125%;
-  letter-spacing: normal;
+float: right;
+border: 4px dotted rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 40px;
   text-align: center;
-  border: 4px dotted rgb(255, 255, 255);
-  border-radius: 7px;
+  width: 40%;
+  height: 55%;
 }
 
-div#player_two_info {
-  float: right;
-}
-
-div#player_one_info>h2 {
-  align-items: center;
-  color: rgb(255, 255, 255);
-  font-size: 110%;
-  letter-spacing: normal;
-  text-align: center;
-}
-
-h2>progress#player_one_hp_bar {
-  color: rgb(255, 255, 255);
-  font-size: 75%;
-  letter-spacing: normal;
-  text-align: center;
-}
-
-div#player_one_info>img {
-  position: relative;
-  align: center;
-  width: 75%;
-  height: 75%;
-  border: 4px dotted rgb(255, 255, 255);
-  border-radius: 7px;
-  /*src='http://i.imgur.com/5kfz7kn.gif style="border: 3px double red" align="center"  >*/
 
 
-
-
-
-.entire_player_one>.player_info{
-  align: center;
-}
-
-.player_info>h2 {
-  color: rgb(255, 255, 255);
-  font-size: 125%;
-  letter-spacing: normal;
-  text-align: center;
-}
-
-.player_info>img {
-  width: 70%;
-  height: 70%;
+div.player_info>img {
+  width: 400px;
+  height: 325px;
   border: 4px dotted rgb(255, 255, 255);
   border-radius: 7px;
   /*src='http://i.imgur.com/5kfz7kn.gif style="border: 3px double red" align="center"  >*/
 }
 
-/*.entire_player_two>.player_dashboard{
-  align: center;
-}*/
-.entire_player_one.player_dashboard {
-  width: 70%;
-  height: 10%;
-  color: rgb(255, 255, 255);
-  font-size: 125%;
-  letter-spacing: normal;
-  text-align: center;
+div.player_info {
+  height: 75%;
   border: 4px dotted rgb(255, 255, 255);
   border-radius: 7px;
 }
 
-.entire_player_two.player_dashboard {
-  width: 70%;
-  height: 10%;
-  color: rgb(255, 255, 255);
+div.player_dashboard {
+  height: 20%;
+  background-color: rgb(255, 255, 255);
   font-size: 125%;
   letter-spacing: normal;
   text-align: center;
-  border: 4px dotted rgb(255, 255, 255);
+  border: 4px dotted rgb(255, 77, 77);
   border-radius: 7px;
 }
 
-/*.entire_player_two>.player_dashboard {
-  width: 70%;
-  height: 10%;
-  color: rgb(255, 255, 255);
-  font-size: 125%;
-  letter-spacing: normal;
-  text-align: center;
-  border: 4px dotted rgb(255, 255, 255);
-  border-radius: 7px;
-}*/
+.player_dashboard>h2 {
+  color: rgb(255, 77, 77)
+}
+
 
 .player_dashboard>h2>progress.hp_bar {
   font-size: 25%;
