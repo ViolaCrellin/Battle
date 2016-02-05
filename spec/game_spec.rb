@@ -14,6 +14,16 @@ describe Game do
 
   describe "#player_one_attacks" do
 
+    before do
+      allow(corbyn).to receive(:dead?).and_return false
+    end
+
+    it 'checks player one isn\'t dead before attacking' do
+      allow(trump).to receive(:receive_damage)
+      expect(corbyn).to receive(:dead?)
+      game.player_one_attacks
+    end
+
     it 'attacks player 2' do
       expect(trump).to receive(:receive_damage)
       game.player_one_attacks
@@ -29,10 +39,13 @@ describe Game do
 
   describe "#player_two_attacks" do
 
+
     it 'attacks player 1' do
       expect(trump).to receive(:receive_damage)
+      allow(corbyn).to receive(:dead?).and_return false
       game.player_one_attacks
       expect(corbyn).to receive(:receive_damage)
+      allow(trump).to receive(:dead?).and_return false
       game.player_two_attacks
     end
 

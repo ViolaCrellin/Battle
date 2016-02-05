@@ -9,7 +9,7 @@ class Game
   end
 
   def player_one_attacks
-    if turn.even?
+    if turn.even? && !p2_won?
       p2.receive_damage
       @turn += 1
     else
@@ -18,7 +18,7 @@ class Game
   end
 
   def player_two_attacks
-    if turn.odd?
+    if turn.odd? && !p1_won?
       p1.receive_damage
       @turn += 1
     else

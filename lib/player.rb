@@ -1,7 +1,7 @@
 
 
 class Player
-  attr_reader :name, :hp, :hp_range
+  attr_reader :name, :hp
 
   STARTING_HP = 100
 
