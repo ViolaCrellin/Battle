@@ -1,30 +1,34 @@
 
 
 class Player
-  attr_reader :name, :hp
+  attr_reader :name, :hp, :random_damage
 
   STARTING_HP = 100
 
   def initialize(name, hp=STARTING_HP)
     @name = name
     @hp = hp
-    @alive = true
+  end
+
+  def random_damage
+    Kernel.rand(20)
   end
 
   def receive_damage
+    @random_damage = random_damage
     if alive?
-      @hp -= Kernel.rand(20)
+      @hp -= @random_damage
     else
       @hp = 0
     end
   end
 
   def alive?
-    hp >= 0
+    hp - random_damage >= 0
   end
 
   def dead?
-    hp <= 0
+    hp - random_damage <= 0
   end
 
 

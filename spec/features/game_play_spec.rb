@@ -69,7 +69,7 @@ end
     end
 
     scenario 'Corbyn declared winner' do
-      10.times do
+      9.times do
         find('#left_attack').click_button("Attack@!£!$!%")
         click_button "OK"
         find('#right_attack').click_button("Attack@!£!$!%")
