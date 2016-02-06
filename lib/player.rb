@@ -28,7 +28,7 @@ class Player
   end
 
   def dead?
-    hp - random_damage <= 0
+    hp - random_damage < 0
   end
 
 
