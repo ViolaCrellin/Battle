@@ -1,7 +1,7 @@
 
 
 class Player
-  attr_reader :name, :hp, :random_damage
+  attr_reader :name, :hp, :random_hp
 
   STARTING_HP = 100
 
@@ -11,20 +11,20 @@ class Player
   end
 
   def random_damage
-    Kernel.rand(20)
+    @random_hp = Kernel.rand(20)
+    random_hp
   end
 
   def receive_damage
-    @random_damage = random_damage
     if alive?
-      @hp -= @random_damage
+      @hp -= @random_hp
     else
       @hp = 0
     end
   end
 
   def alive?
-    hp - random_damage >= 0
+    hp - @random_hp >= 0
   end
 
   def dead?
